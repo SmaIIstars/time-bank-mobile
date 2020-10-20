@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 14:35:54
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 15:00:08
+ * @LastEditTime: 2020-10-19 11:31:00
 -->
 <template>
   <div class="display-bar-item" @click="itemClick">
@@ -23,13 +23,22 @@ export default {
   name: "DispalyBarItem",
   created() {},
 
+  props: {
+    itemClickCallback: {
+      type: Function,
+      default: () => {
+        console.log(1);
+      },
+    },
+  },
+
   data() {
     return {};
   },
 
   methods: {
     itemClick() {
-      console.log(1);
+      this.itemClickCallback();
     },
   },
 };

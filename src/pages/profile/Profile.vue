@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:15:41
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 16:55:06
+ * @LastEditTime: 2020-10-19 23:57:43
 -->
 <template>
   <div>
@@ -25,12 +25,14 @@ export default {
     Header,
     ProfileDisplayBar,
   },
+
+  created() {},
+
   data() {
     return {
       isItem: false,
     };
   },
-  created() {},
 
   methods: {},
 };

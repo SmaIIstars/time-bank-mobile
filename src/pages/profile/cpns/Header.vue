@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 15:41:04
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 16:39:35
+ * @LastEditTime: 2020-10-20 00:01:49
 -->
 <template>
   <div class="header-wrapper">
@@ -28,9 +28,7 @@ export default {
   created() {},
 
   data() {
-    return {
-      msg: "Header",
-    };
+    return {};
   },
 
   methods: {},

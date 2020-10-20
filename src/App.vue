@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import MainTabBar from "./components/common/mainTabBar/MainTabBar";
+import MainTabBar from "components/common/mainTabBar/MainTabBar";
 
 export default {
   name: "App",

@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:47:02
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 14:59:28
+ * @LastEditTime: 2020-10-19 23:56:58
 -->
 <template>
   <TabBar class="main-tabbar">
@@ -46,6 +46,7 @@
     </TabBarItem>
 
     <TabBarItem path="/profile" :activeColor="activeColor" class="tabbar-item">
+      <!-- @click="proflieTabBarClick" -->
       <div slot="item-icon">
         <i class="fa fa-user fa-lg" />
       </div>
@@ -59,6 +60,8 @@
 </template>
 
 <script>
+import { SETTING_CHANGE_ISITEM } from "store/modules/settingModule/constants";
+
 import TabBar from "common/components/tabbar/TabBar";
 import TabBarItem from "common/components/tabbar/TabBarItem";
 
@@ -77,7 +80,17 @@ export default {
     };
   },
 
-  methods: {},
+  methods: {
+    proflieTabBarClick() {
+      console.log("proflieTabBarClick");
+      console.log(this.$store);
+      // this.$store.state.setting.isItem = false;
+      // this.$store.commit({
+      //   type: SETTING_CHANGE_ISITEM,
+      //   value: false,
+      // });
+    },
+  },
 };
 </script>
 
@@ -87,7 +100,7 @@ export default {
   width: 100%;
 
   bottom: 0px;
-  padding-bottom: 5px;
+  padding: 5px 0;
   background-color: #f6f6f6;
 
   .tabbar-item {

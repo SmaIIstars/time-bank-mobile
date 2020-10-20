@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 14:37:22
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 16:59:08
+ * @LastEditTime: 2020-10-19 23:56:45
 -->
 <template>
   <DisplayBar class="display-bar-wrapper">
@@ -52,7 +52,7 @@
     </DisplayBarItem>
     <el-divider />
 
-    <DisplayBarItem class="item" @click="settingsClick">
+    <DisplayBarItem class="item" :itemClickCallback="settingsClick">
       <div slot="item-left">
         <span class="text">设置</span>
       </div>
@@ -65,6 +65,8 @@
 </template>
 
 <script>
+import { SETTING_CHANGE_ISITEM } from "store/modules/settingModule/constants";
+
 import DisplayBar from "common/components/displayBar/DisplayBar";
 import DisplayBarItem from "common/components/displayBar/DispalyBarItem";
 
@@ -81,7 +83,14 @@ export default {
   },
 
   methods: {
-    settingsClick() {},
+    settingsClick() {
+      console.log(this.$store);
+      // this.$store.state.setting.isItem = true;
+      // this.$store.commit(SETTING_CHANGE_ISITEM, {
+      //   value: true,
+      // });
+      this.$router.replace("/profile/settings");
+    },
   },
 };
 </script>
