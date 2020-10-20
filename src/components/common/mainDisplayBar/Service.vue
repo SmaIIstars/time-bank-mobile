@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-20 11:53:45
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 11:57:33
+ * @LastEditTime: 2020-10-20 17:24:01
 -->
 <template>
   <DisplayBar class="display-bar-wrapper">
@@ -32,7 +32,7 @@ import DisplayBar from "common/components/displayBar/DisplayBar";
 import DisplayBarItem from "common/components/displayBar/DispalyBarItem";
 
 export default {
-  name: "Service",
+  name: "ServiceDisplayBar",
   created() {},
 
   components: {

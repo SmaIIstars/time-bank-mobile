@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:47:02
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 11:43:38
+ * @LastEditTime: 2020-10-20 16:02:08
 -->
 <template>
   <TabBar class="main-tabbar">
@@ -107,13 +107,6 @@ export default {
     proflieTabBarClick() {
       // console.log("proflieTabBarClick");
       this.$router.replace("/profile");
-
-      // console.log(this.$store);
-      // this.$store.state.setting.isItem = false;
-      // this.$store.commit({
-      //   type: SETTING_CHANGE_ISITEM,
-      //   value: false,
-      // });
     },
   },
 };

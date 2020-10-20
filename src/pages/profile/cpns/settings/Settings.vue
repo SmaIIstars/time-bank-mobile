@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 16:44:27
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 14:12:34
+ * @LastEditTime: 2020-10-20 17:46:57
 -->
 <template>
   <div>
@@ -18,14 +18,17 @@
     <SettingsDisplayBar />
 
     <div class="sign-out-button">
-      <el-button type="info" round>信息按钮</el-button>
+      <el-button type="info" round @click="signOut">退出登录</el-button>
     </div>
   </div>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
-import { CHANGE_ISITEM } from "store/modules/settingModule/constants";
+import {
+  CHANGE_ISITEM,
+  CHANGE_ISSHOW_MAINTABBAR,
+} from "store/modules/settingModule/constants";
 
 import NavBar from "common/components/navbar/NavBar";
 import SettingsDisplayBar from "components/common/mainDisplayBar/Settings";
@@ -49,21 +52,24 @@ export default {
   methods: {
     ...mapMutations("setting", {
       changeIsItem: CHANGE_ISITEM,
+      changeIsShowMainTabBar: CHANGE_ISSHOW_MAINTABBAR,
     }),
 
     initValue() {
       // isItem
-      this.changeIsItem({
-        value: true,
-      });
+      this.changeIsItem({ value: true });
+      this.changeIsShowMainTabBar({ value: false });
     },
 
     backIcon() {
-      this.$router.replace("/profile");
+      this.$router.push("/profile");
 
-      this.changeIsItem({
-        value: false,
-      });
+      this.changeIsItem({ value: false });
+      this.changeIsShowMainTabBar({ value: true });
+    },
+
+    signOut() {
+      this.$router.push("/login");
     },
   },
 };

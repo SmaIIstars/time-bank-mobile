@@ -4,19 +4,19 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:14:34
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 13:51:04
+ * @LastEditTime: 2020-10-20 16:03:01
 -->
 <template>
   <div>Find</div>
 </template>
 
 <script>
-import { test } from "../../servers/find";
+import { getUserInfo } from "servers/user";
 
 export default {
   name: "Find",
   created() {
-    test().then((res) => {
+    getUserInfo().then((res) => {
       console.log(res);
     });
   },

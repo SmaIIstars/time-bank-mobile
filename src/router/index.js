@@ -13,6 +13,8 @@ VueRouter.prototype.replace = function replace(location) {
   return originalReplace.call(this, location).catch((err) => err);
 };
 
+const Login = () => import("pages/login/Login.vue");
+const Register = () => import("pages/register/Register.vue");
 const Find = () => import("pages/find/Find.vue");
 
 const Task = () => import("pages/task/Task.vue");
@@ -21,7 +23,6 @@ const Community = () => import("pages/community/Community.vue");
 
 const Profile = () => import("pages/profile/Profile.vue");
 
-const UserInfo = () => import("pages/profile/cpns/userInfo/UserInfo.vue");
 const Personal = () => import("pages/profile/cpns/personal/Personal.vue");
 const Service = () => import("pages/profile/cpns/service/Service.vue");
 const Settings = () => import("pages/profile/cpns/settings/Settings.vue");
@@ -31,6 +32,16 @@ const routes = [
     path: "",
     redirect: "/find",
   },
+
+  {
+    path: "/login",
+    component: Login,
+  },
+  {
+    path: "/register",
+    component: Register,
+  },
+
   {
     path: "/find",
     component: Find,
@@ -47,10 +58,6 @@ const routes = [
     path: "/profile",
     component: Profile,
     children: [
-      {
-        path: "userinfo",
-        component: UserInfo,
-      },
       {
         path: "personal",
         component: Personal,

@@ -1,10 +1,17 @@
 <!--
+ * @Autor: Smallstars
+ * @Date: 2020-10-20 14:28:51
+ * @LastEditors: Smallstars
+ * @LastEditTime: 2020-10-20 17:53:35
+ * @Description: 
+-->
+<!--
  * @Descripttion: 
  * @version: 1.0.0
  * @Author: Smallstars
  * @Date: 2020-10-18 14:37:22
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 11:51:57
+ * @LastEditTime: 2020-10-20 15:38:05
 -->
 <template>
   <DisplayBar class="display-bar-wrapper">
@@ -65,9 +72,6 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex";
-import { CHANGE_ISITEM } from "store/modules/settingModule/constants";
-
 import DisplayBar from "common/components/displayBar/DisplayBar";
 import DisplayBarItem from "common/components/displayBar/DispalyBarItem";
 
@@ -86,24 +90,12 @@ export default {
   computed: {},
 
   methods: {
-    ...mapMutations("setting", {
-      changeIsItem: CHANGE_ISITEM,
-    }),
-
     durationClick() {
-      this.changeIsItem({
-        value: true,
-      });
-      this.$router.replace("/profile/service");
+      this.$router.push("/profile/service");
     },
 
     settingsClick() {
-      // console.log(this.isItem);
-      // this.$store.state.setting.isItem = true;
-      this.changeIsItem({
-        value: true,
-      });
-      this.$router.replace("/profile/settings");
+      this.$router.push("/profile/settings");
     },
   },
 };

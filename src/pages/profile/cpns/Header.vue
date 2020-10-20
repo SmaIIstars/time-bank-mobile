@@ -4,34 +4,44 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 15:41:04
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 00:01:49
+ * @LastEditTime: 2020-10-20 17:55:58
 -->
 <template>
-  <div class="header-wrapper">
+  <div class="header-wrapper" v-if="!$store.state.user.isLogined">
     <div class="header-left">
-      <h2 class="username">Smallstars</h2>
-      <span class="integral">积分: 100</span>
+      <h2 class="username">{{ user.username }}</h2>
+      <span class="integral">积分: {{ user.integral }}</span>
     </div>
     <div class="header-right">
-      <img
-        src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png?x-oss-process=image/quality,q_1/resize,m_mfit,h_60,w_60"
-        alt="暂无图片"
-        class="avatar"
-      />
+      <el-avatar :src="user.avatar" :size="60"></el-avatar>
     </div>
+  </div>
+  <div v-else>
+    <h1>请登录</h1>
   </div>
 </template>
 
 <script>
+import { getUserInfo, UserInfo } from "servers/user";
+
 export default {
   name: "Header",
-  created() {},
-
-  data() {
-    return {};
+  created() {
+    this.getUserInfo();
   },
 
-  methods: {},
+  data() {
+    return {
+      user: {},
+    };
+  },
+
+  methods: {
+    getUserInfo() {
+      this.user = this.$store.state.user.userInfo;
+      console.log(this.user);
+    },
+  },
 };
 </script>
 
@@ -61,13 +71,6 @@ export default {
   .header-right {
     flex: 1;
     text-align: center;
-
-    .avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      overflow: hidden;
-    }
   }
 }
 </style>

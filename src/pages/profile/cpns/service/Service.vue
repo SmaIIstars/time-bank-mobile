@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 16:44:27
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 11:55:02
+ * @LastEditTime: 2020-10-20 17:47:17
 -->
 <template>
   <div>
@@ -22,7 +22,10 @@
 
 <script>
 import { mapMutations } from "vuex";
-import { CHANGE_ISITEM } from "store/modules/settingModule/constants";
+import {
+  CHANGE_ISITEM,
+  CHANGE_ISSHOW_MAINTABBAR,
+} from "store/modules/settingModule/constants";
 
 import NavBar from "common/components/navbar/NavBar";
 import ServiceDisplayBar from "components/common/mainDisplayBar/Service";
@@ -30,7 +33,7 @@ import ServiceDisplayBar from "components/common/mainDisplayBar/Service";
 export default {
   name: "Service",
   created() {
-    // 如果在profile/settings刷新重置isItem值
+    // profile/settings刷新重置
     this.initValue();
   },
   components: {
@@ -45,21 +48,20 @@ export default {
   methods: {
     ...mapMutations("setting", {
       changeIsItem: CHANGE_ISITEM,
+      changeIsShowMainTabBar: CHANGE_ISSHOW_MAINTABBAR,
     }),
 
     initValue() {
       // isItem
-      this.changeIsItem({
-        value: true,
-      });
+      this.changeIsItem({ value: true });
+      this.changeIsShowMainTabBar({ value: false });
     },
 
     backIcon() {
       this.$router.replace("/profile");
 
-      this.changeIsItem({
-        value: false,
-      });
+      this.changeIsItem({ value: false });
+      this.changeIsShowMainTabBar({ value: true });
     },
   },
 };

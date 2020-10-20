@@ -4,13 +4,15 @@
  * @Author: Smallstars
  * @Date: 2020-10-17 22:53:23
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 15:18:28
+ * @LastEditTime: 2020-10-20 17:40:30
 -->
 
 <template>
   <div id="app">
-    <router-view />
-    <MainTabBar />
+    <keep-alive>
+      <router-view />
+    </keep-alive>
+    <MainTabBar v-if="$store.state.setting.isShowMainTabBar" />
   </div>
 </template>
 
