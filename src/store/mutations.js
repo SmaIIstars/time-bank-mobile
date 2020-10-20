@@ -1,8 +1,3 @@
-const mutations = {
-  SETTING_CHANGE_ISITEM(state, payload) {
-    console.log(1);
-    state.isItem = payload.value;
-  },
-};
+const mutations = {};
 
 export default mutations;

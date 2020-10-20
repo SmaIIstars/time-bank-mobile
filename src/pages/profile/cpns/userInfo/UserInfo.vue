@@ -2,21 +2,25 @@
  * @Descripttion: 
  * @version: 1.0.0
  * @Author: Smallstars
- * @Date: 2020-10-18 16:44:27
+ * @Date: 2020-10-20 14:01:49
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 11:55:02
+ * @LastEditTime: 2020-10-20 14:26:55
 -->
 <template>
   <div>
-    <!-- 头部 -->
     <NavBar>
       <div slot="left" class="nav-left" @click="backIcon">
         <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
       </div>
-    </NavBar>
 
-    <h4 class="title">时长</h4>
-    <ServiceDisplayBar />
+      <div slot="center" class="nav-mid">
+        <span>个人信息</span>
+      </div>
+
+      <div slot="right" class="nav-right">
+        <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+      </div>
+    </NavBar>
   </div>
 </template>
 
@@ -25,18 +29,14 @@ import { mapMutations } from "vuex";
 import { CHANGE_ISITEM } from "store/modules/settingModule/constants";
 
 import NavBar from "common/components/navbar/NavBar";
-import ServiceDisplayBar from "components/common/mainDisplayBar/Service";
 
 export default {
-  name: "Service",
-  created() {
-    // 如果在profile/settings刷新重置isItem值
-    this.initValue();
-  },
+  name: "UserInfo",
   components: {
     NavBar,
-    ServiceDisplayBar,
   },
+
+  created() {},
 
   data() {
     return {};
@@ -46,13 +46,6 @@ export default {
     ...mapMutations("setting", {
       changeIsItem: CHANGE_ISITEM,
     }),
-
-    initValue() {
-      // isItem
-      this.changeIsItem({
-        value: true,
-      });
-    },
 
     backIcon() {
       this.$router.replace("/profile");
@@ -66,10 +59,11 @@ export default {
 </script>
 
 <style scoped lang="less">
-.title {
-  margin: 10px 0 10px 10px;
-}
-.nav-left {
+.nav-left,
+.nav-right {
   padding: 10px;
+}
+.nav-mid {
+  flex: 1;
 }
 </style>

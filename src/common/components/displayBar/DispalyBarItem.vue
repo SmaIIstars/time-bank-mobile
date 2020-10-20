@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 14:35:54
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-19 11:31:00
+ * @LastEditTime: 2020-10-20 11:53:59
 -->
 <template>
   <div class="display-bar-item" @click="itemClick">
@@ -27,7 +27,7 @@ export default {
     itemClickCallback: {
       type: Function,
       default: () => {
-        console.log(1);
+        console.log("please pass a function called itemClickCallback");
       },
     },
   },

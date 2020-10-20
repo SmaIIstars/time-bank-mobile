@@ -11,5 +11,6 @@ import "font-awesome/css/font-awesome.min.css";
 import "assets/mock";
 
 // element ui
-import { Divider } from "element-ui";
+import { Divider, Button } from "element-ui";
 Vue.use(Divider);
+Vue.use(Button);

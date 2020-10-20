@@ -4,13 +4,13 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 14:37:22
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-19 23:56:45
+ * @LastEditTime: 2020-10-20 11:56:13
 -->
 <template>
   <DisplayBar class="display-bar-wrapper">
     <DisplayBarItem class="item">
       <div slot="item-left">
-        <span class="text">修改密码</span>
+        <span class="text">通知</span>
       </div>
 
       <div slot="item-right">
@@ -21,7 +21,7 @@
 
     <DisplayBarItem class="item">
       <div slot="item-left">
-        <span class="text">邀请朋友</span>
+        <span class="text">国家</span>
       </div>
 
       <div slot="item-right">
@@ -32,7 +32,7 @@
 
     <DisplayBarItem class="item">
       <div slot="item-left">
-        <span class="text">志愿时长&amp;个人时长</span>
+        <span class="text">服务条款</span>
       </div>
 
       <div slot="item-right">
@@ -43,7 +43,7 @@
 
     <DisplayBarItem class="item">
       <div slot="item-left">
-        <span class="text">支付</span>
+        <span class="text">隐私政策</span>
       </div>
 
       <div slot="item-right">
@@ -52,9 +52,9 @@
     </DisplayBarItem>
     <el-divider />
 
-    <DisplayBarItem class="item" :itemClickCallback="settingsClick">
+    <DisplayBarItem class="item" :itemClickCallback="feedbackClick">
       <div slot="item-left">
-        <span class="text">设置</span>
+        <span class="text">反馈</span>
       </div>
 
       <div slot="item-right">
@@ -65,13 +65,11 @@
 </template>
 
 <script>
-import { SETTING_CHANGE_ISITEM } from "store/modules/settingModule/constants";
-
 import DisplayBar from "common/components/displayBar/DisplayBar";
 import DisplayBarItem from "common/components/displayBar/DispalyBarItem";
 
 export default {
-  name: "ProfileDisplayBar",
+  name: "Settings",
   components: {
     DisplayBar,
     DisplayBarItem,
@@ -82,15 +80,10 @@ export default {
     return {};
   },
 
+  computed: {},
+
   methods: {
-    settingsClick() {
-      console.log(this.$store);
-      // this.$store.state.setting.isItem = true;
-      // this.$store.commit(SETTING_CHANGE_ISITEM, {
-      //   value: true,
-      // });
-      this.$router.replace("/profile/settings");
-    },
+    feedbackClick() {},
   },
 };
 </script>

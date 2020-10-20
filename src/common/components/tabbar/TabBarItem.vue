@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:31:03
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-18 13:05:48
+ * @LastEditTime: 2020-10-20 11:49:35
 -->
 <template>
   <div class="tab-bar-item" @click="itemClick">
@@ -36,6 +36,13 @@ export default {
       type: String,
       default: "red",
     },
+    itemClickCallback: {
+      type: Function,
+      default: () => {
+        // this.$router.replace(this.path);
+        console.log("please pass a function called itemClickCallback");
+      },
+    },
   },
 
   data() {
@@ -54,7 +61,7 @@ export default {
 
   methods: {
     itemClick() {
-      this.$router.replace(this.path);
+      this.itemClickCallback();
     },
   },
 };

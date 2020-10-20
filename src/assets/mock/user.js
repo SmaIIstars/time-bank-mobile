@@ -1,5 +1,7 @@
 import Mock from "mockjs";
 
+const phonePrefixs = ["135"];
+
 Mock.Random.extend({
   phone: function() {
     return this.pick(phonePrefixs) + Mock.mock(/\d{8}/);

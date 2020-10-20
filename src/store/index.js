@@ -5,9 +5,7 @@ Vue.use(Vuex);
 import mutations from "./mutations";
 import { settingStore } from "./modules/settingModule";
 
-const state = {
-  name: "Smallstars",
-};
+const state = {};
 // console.log("settingStore", settingStore);
 
 const store = new Vuex.Store({
@@ -17,6 +15,6 @@ const store = new Vuex.Store({
     setting: settingStore,
   },
 });
-console.log("store", store);
+// console.log("store", store);
 
 export default store;

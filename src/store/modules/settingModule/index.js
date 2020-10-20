@@ -9,7 +9,7 @@ const state = {
 };
 
 const settingStore = {
-  namespace: true,
+  namespaced: true,
   state,
   mutations,
 };
