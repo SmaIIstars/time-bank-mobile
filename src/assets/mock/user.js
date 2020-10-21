@@ -12,6 +12,13 @@ Mock.Random.extend({
 //   username: "@name",
 // }));
 
+/**
+ * 0 -> 未登录
+ * 1 -> 普通用户
+ * 2 -> vip
+ * 3 -> 管理员
+ */
+
 Mock.mock("/api/user", {
   username: "@cname",
   email: "@email",

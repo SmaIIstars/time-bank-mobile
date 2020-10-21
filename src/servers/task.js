@@ -6,7 +6,3 @@ export function getTaskInfo() {
     method: "get",
   });
 }
-
-export class TaskInfo {
-  constructor(payload) {}
-}

@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 15:41:04
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-21 16:53:21
+ * @LastEditTime: 2020-10-21 17:57:43
 -->
 <template>
   <div class="header-wrapper" v-if="user.isLogined">
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div v-else>
-    <h1>请登录{{ user.isLogined ? "!!!" : "???" }}</h1>
+    <h1>请登录</h1>
   </div>
 </template>
 

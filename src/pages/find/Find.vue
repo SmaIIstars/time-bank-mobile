@@ -4,24 +4,39 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:14:34
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-21 17:09:41
+ * @LastEditTime: 2020-10-21 20:13:25
 -->
 <template>
   <div>Find</div>
 </template>
 
 <script>
-import { getUserInfo } from "servers/user";
+import { mapMutations } from "vuex";
+
+import { CHANGE_TASK_LIST } from "../../store/modules/taskModule/constants";
+import { getTaskInfo } from "servers/task";
 
 export default {
   name: "Find",
-  created() {},
+  created() {
+    this.getTaskInfo();
+  },
 
   data() {
     return {};
   },
 
-  methods: {},
+  methods: {
+    ...mapMutations("task", {
+      changeTaskList: CHANGE_TASK_LIST,
+    }),
+
+    getTaskInfo() {
+      getTaskInfo().then((res) => {
+        this.changeTaskList(res);
+      });
+    },
+  },
 };
 </script>
 
