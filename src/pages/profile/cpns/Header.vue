@@ -4,10 +4,10 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 15:41:04
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 17:55:58
+ * @LastEditTime: 2020-10-21 16:53:21
 -->
 <template>
-  <div class="header-wrapper" v-if="!$store.state.user.isLogined">
+  <div class="header-wrapper" v-if="user.isLogined">
     <div class="header-left">
       <h2 class="username">{{ user.username }}</h2>
       <span class="integral">积分: {{ user.integral }}</span>
@@ -17,7 +17,7 @@
     </div>
   </div>
   <div v-else>
-    <h1>请登录</h1>
+    <h1>请登录{{ user.isLogined ? "!!!" : "???" }}</h1>
   </div>
 </template>
 
@@ -26,20 +26,15 @@ import { getUserInfo, UserInfo } from "servers/user";
 
 export default {
   name: "Header",
-  created() {
-    this.getUserInfo();
-  },
+  created() {},
 
   data() {
-    return {
-      user: {},
-    };
+    return {};
   },
 
-  methods: {
-    getUserInfo() {
-      this.user = this.$store.state.user.userInfo;
-      console.log(this.user);
+  computed: {
+    user() {
+      return this.$store.state.user.userInfo;
     },
   },
 };

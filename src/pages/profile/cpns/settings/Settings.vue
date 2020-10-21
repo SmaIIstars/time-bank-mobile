@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 16:44:27
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 17:46:57
+ * @LastEditTime: 2020-10-21 16:43:56
 -->
 <template>
   <div>
@@ -69,6 +69,7 @@ export default {
     },
 
     signOut() {
+      this.changeIsItem({ value: false });
       this.$router.push("/login");
     },
   },

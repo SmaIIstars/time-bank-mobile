@@ -22,10 +22,11 @@ const Task = () => import("pages/task/Task.vue");
 const Community = () => import("pages/community/Community.vue");
 
 const Profile = () => import("pages/profile/Profile.vue");
-
 const Personal = () => import("pages/profile/cpns/personal/Personal.vue");
 const Service = () => import("pages/profile/cpns/service/Service.vue");
 const Settings = () => import("pages/profile/cpns/settings/Settings.vue");
+
+const ErrorPage = () => import("pages/error/ErrorPage.vue");
 
 const routes = [
   {
@@ -71,6 +72,10 @@ const routes = [
         component: Settings,
       },
     ],
+  },
+  {
+    path: "*",
+    component: ErrorPage,
   },
 ];
 

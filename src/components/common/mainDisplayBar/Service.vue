@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-20 11:53:45
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 17:24:01
+ * @LastEditTime: 2020-10-21 16:57:44
 -->
 <template>
   <DisplayBar class="display-bar-wrapper">
@@ -13,7 +13,9 @@
         <span class="text">志愿服务</span>
       </div>
 
-      <div slot="item-right">0</div>
+      <div slot="item-right">
+        {{ $store.state.user.userInfo.duration.volunteer }}
+      </div>
     </DisplayBarItem>
     <el-divider />
 
@@ -22,7 +24,9 @@
         <span class="text">个人服务</span>
       </div>
 
-      <div slot="item-right">0</div>
+      <div slot="item-right">
+        {{ $store.state.user.userInfo.duration.personal }}
+      </div>
     </DisplayBarItem>
   </DisplayBar>
 </template>

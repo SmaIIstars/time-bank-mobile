@@ -30,6 +30,7 @@ const state = {
 };
 
 const userStore = {
+  namespaced: true,
   state,
   mutations,
 };
