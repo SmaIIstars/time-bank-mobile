@@ -4,20 +4,37 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:14:34
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-21 20:13:25
+ * @LastEditTime: 2020-10-22 11:33:43
 -->
 <template>
-  <div>Find</div>
+  <Scroll class="findpage-wrapper">
+    <Header />
+    <div class="task-items">
+      <NewPublic />
+      <Expensive />
+    </div>
+  </Scroll>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
 
-import { CHANGE_TASK_LIST } from "../../store/modules/taskModule/constants";
+import { CHANGE_TASK_LIST } from "store/modules/taskModule/constants";
 import { getTaskInfo } from "servers/task";
+
+import Scroll from "components/common/scroll/Scroll";
+import Header from "./cpns/Header";
+import NewPublic from "./cpns/NewPublic";
+import Expensive from "./cpns/Expensive";
 
 export default {
   name: "Find",
+  components: {
+    Scroll,
+    Header,
+    NewPublic,
+    Expensive,
+  },
   created() {
     this.getTaskInfo();
   },
@@ -40,5 +57,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="less">
+.findpage-wrapper {
+  height: calc(100vh - 49px);
+  overflow: hidden;
+
+  .task-items {
+    padding-top: 80px;
+
+    background-color: #f6f6f6;
+  }
+}
 </style>
