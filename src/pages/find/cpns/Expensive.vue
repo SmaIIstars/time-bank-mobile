@@ -2,14 +2,14 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 11:22:32
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 19:35:45
+ * @LastEditTime: 2020-10-23 20:02:18
  * @Description: 
 -->
 <template>
   <div>
     <div class="page-wrapper">
       <el-card class="box-card">
-        <div slot="header" class="clearfix" @click="test">
+        <div slot="header" class="clearfix">
           <h4>最高悬赏</h4>
         </div>
 
@@ -24,16 +24,22 @@
                 <img :src="taskItem.imgUrl[0]" alt="" />
               </div>
 
-              <div slot="content" class="task-content">
-                <div class="task-title">
-                  {{ taskItem.title }}
+              <div slot="content" class="task-content" @click="taskItemClick">
+                <div class="task-content-top">
+                  <div class="task-title">
+                    {{ taskItem.title }}
+                  </div>
+
+                  <div>
+                    <div class="task-city">
+                      {{ taskItem.city }}
+                    </div>
+                  </div>
                 </div>
 
-                <div class="task-city">
-                  {{ taskItem.city }}
+                <div class="task-content-bottom">
+                  <div class="task-integral">积分: {{ taskItem.integral }}</div>
                 </div>
-
-                <div class="task-integral">积分: {{ taskItem.integral }}</div>
               </div>
             </InfoWrapper>
           </div>
@@ -72,14 +78,15 @@ export default {
       this.scroll = new BScroll(this.$refs.expensiveRef, {
         click: true,
         scrollY: true,
+
         observeDOM: true,
         nestedScroll: true,
       });
       // console.log(this.scroll);
     },
 
-    test() {
-      this.init();
+    taskItemClick() {
+      console.log(1);
     },
   },
 };
@@ -134,13 +141,17 @@ export default {
           }
         }
 
-        .task-city,
-        .task-integral {
+        .task-city {
           font-size: 12px;
           overflow: hidden;
           text-overflow: ellipsis;
 
           color: #bfbfbf;
+        }
+
+        .task-integral {
+          font-size: 16px;
+          font-weight: 600;
         }
       }
     }
