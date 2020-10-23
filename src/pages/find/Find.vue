@@ -4,14 +4,18 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:14:34
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-22 11:33:43
+ * @LastEditTime: 2020-10-23 17:41:36
 -->
 <template>
-  <Scroll class="findpage-wrapper">
+  <Scroll
+    class="findpage-wrapper"
+    :probeType="scrollOptions.probeType"
+    @getScrollPosition="getScrollPosition"
+  >
     <Header />
     <div class="task-items">
-      <NewPublic />
-      <Expensive />
+      <NewPublic class="item-module" />
+      <Expensive class="item-module" />
     </div>
   </Scroll>
 </template>
@@ -35,12 +39,19 @@ export default {
     NewPublic,
     Expensive,
   },
+
   created() {
     this.getTaskInfo();
   },
 
+  mounted() {},
+
   data() {
-    return {};
+    return {
+      scrollOptions: {
+        probeType: 3,
+      },
+    };
   },
 
   methods: {
@@ -52,6 +63,10 @@ export default {
       getTaskInfo().then((res) => {
         this.changeTaskList(res);
       });
+    },
+
+    getScrollPosition(pos) {
+      // console.log(pos);
     },
   },
 };
@@ -66,6 +81,10 @@ export default {
     padding-top: 80px;
 
     background-color: #f6f6f6;
+  }
+
+  .item-module {
+    margin: 40px 0;
   }
 }
 </style>
