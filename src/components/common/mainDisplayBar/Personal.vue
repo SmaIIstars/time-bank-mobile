@@ -111,6 +111,7 @@ export default {
 
     .content {
       margin-right: 20px;
+      color: #bfbfbf;
     }
   }
 }

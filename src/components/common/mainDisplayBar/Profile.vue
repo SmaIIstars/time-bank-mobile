@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-20 14:28:51
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 17:53:35
+ * @LastEditTime: 2020-10-23 19:31:30
  * @Description: 
 -->
 <!--
@@ -118,6 +118,10 @@ export default {
 
       line-height: 20px;
       text-align: center;
+
+      .icon {
+        color: #bfbfbf;
+      }
     }
   }
 }

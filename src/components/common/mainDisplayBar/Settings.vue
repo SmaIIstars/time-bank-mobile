@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 14:37:22
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 11:56:13
+ * @LastEditTime: 2020-10-23 19:33:28
 -->
 <template>
   <DisplayBar class="display-bar-wrapper">
@@ -105,6 +105,7 @@ export default {
 
       line-height: 20px;
       text-align: center;
+      color: #bfbfbf;
     }
   }
 }

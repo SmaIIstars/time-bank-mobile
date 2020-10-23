@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 11:22:32
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 19:17:54
+ * @LastEditTime: 2020-10-23 19:35:45
  * @Description: 
 -->
 <template>
@@ -75,7 +75,7 @@ export default {
         observeDOM: true,
         nestedScroll: true,
       });
-      console.log(this.scroll);
+      // console.log(this.scroll);
     },
 
     test() {
@@ -121,7 +121,7 @@ export default {
           display: flex;
           flex-flow: column;
           justify-content: space-evenly;
-          margin: 5px 0 0 5px;
+          margin: 5px 0 0px 15px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
