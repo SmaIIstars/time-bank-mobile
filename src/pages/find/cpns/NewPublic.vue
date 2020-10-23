@@ -2,14 +2,14 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 11:22:32
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 17:52:22
+ * @LastEditTime: 2020-10-23 19:16:02
  * @Description: 
 -->
 <template>
   <div class="page-wrapper">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>最新发布</span>
+        <h4>最新发布</h4>
       </div>
 
       <div class="wrapper" ref="newPublicRef">
@@ -103,8 +103,9 @@ export default {
 
         .task-item {
           display: flex;
+
           flex-flow: column;
-          height: 180px;
+          height: 160px;
           width: 120px;
           margin: 10px;
 
@@ -122,7 +123,10 @@ export default {
 
           .task-content {
             flex: 4;
-            margin-top: 5px;
+
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
             margin-left: 3px;
 
             .task-title {
@@ -136,6 +140,10 @@ export default {
           .task-city,
           .task-integral {
             font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            color: #bfbfbf;
           }
         }
       }

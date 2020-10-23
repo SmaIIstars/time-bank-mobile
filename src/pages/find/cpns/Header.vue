@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 10:07:07
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-22 11:15:36
+ * @LastEditTime: 2020-10-23 19:04:06
  * @Description: 
 -->
 <template>
@@ -12,10 +12,10 @@
         <span>你所在的城市有合适志愿者服务吗？</span>
       </div>
       <el-input
-        placeholder="搜索任务"
+        placeholder="成都"
         v-model="input"
         clearable
-        prefix-icon="fa fa-search fa-lg"
+        prefix-icon="fa fa-search fa-lg "
       ></el-input>
       <el-button round>搜索</el-button>
     </div>
@@ -85,8 +85,13 @@ export default {
     .el-button {
       width: 80%;
       height: 45px;
-      background-color: papayawhip;
+      color: white;
+      background-color: #13c2c2;
     }
   }
+}
+
+/deep/ .el-input__icon {
+  color: #13c2c2;
 }
 </style>

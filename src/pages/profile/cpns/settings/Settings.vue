@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 16:44:27
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-21 16:43:56
+ * @LastEditTime: 2020-10-23 19:08:43
 -->
 <template>
   <div>
@@ -88,6 +88,7 @@ export default {
   margin-top: 50px;
 }
 .el-button {
+  height: 45px;
   width: 80%;
 }
 </style>

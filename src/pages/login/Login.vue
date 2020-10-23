@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-20 16:56:11
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-21 16:44:36
+ * @LastEditTime: 2020-10-23 19:09:06
  * @Description: 
 -->
 <template>
@@ -207,6 +207,7 @@ export default {
   height: 50px;
 
   font-size: 20px;
+  background-color: #13c2c2;
 }
 
 /deep/ .el-form-item__error {

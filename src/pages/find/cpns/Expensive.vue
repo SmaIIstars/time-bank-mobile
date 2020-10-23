@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 11:22:32
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 18:11:59
+ * @LastEditTime: 2020-10-23 19:17:54
  * @Description: 
 -->
 <template>
@@ -10,7 +10,7 @@
     <div class="page-wrapper">
       <el-card class="box-card">
         <div slot="header" class="clearfix" @click="test">
-          <span>最高悬赏</span>
+          <h4>最高悬赏</h4>
         </div>
 
         <div class="wrapper" ref="expensiveRef">
@@ -118,6 +118,9 @@ export default {
 
         .task-content {
           flex: 5;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-evenly;
           margin: 5px 0 0 5px;
           white-space: nowrap;
           overflow: hidden;
@@ -134,6 +137,10 @@ export default {
         .task-city,
         .task-integral {
           font-size: 12px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          color: #bfbfbf;
         }
       }
     }

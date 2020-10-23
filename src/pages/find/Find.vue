@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:14:34
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 17:41:36
+ * @LastEditTime: 2020-10-23 19:11:02
 -->
 <template>
   <Scroll
@@ -76,11 +76,10 @@ export default {
 .findpage-wrapper {
   height: calc(100vh - 49px);
   overflow: hidden;
+  background-color: #f6f6f6;
 
   .task-items {
     padding-top: 80px;
-
-    background-color: #f6f6f6;
   }
 
   .item-module {

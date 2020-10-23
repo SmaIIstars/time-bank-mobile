@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 10:47:02
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 16:02:08
+ * @LastEditTime: 2020-10-23 19:06:35
 -->
 <template>
   <TabBar class="main-tabbar">
@@ -89,7 +89,7 @@ export default {
 
   data() {
     return {
-      activeColor: "#14D3D3",
+      activeColor: "#13C2C2",
     };
   },
 

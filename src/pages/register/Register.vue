@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-20 16:56:11
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-21 16:39:59
+ * @LastEditTime: 2020-10-23 19:10:15
  * @Description: 
 -->
 <template>
@@ -163,7 +163,7 @@ export default {
     },
 
     backLoginPage() {
-      this.$router.push("/lgoin");
+      this.$router.push("/login");
     },
 
     submitClick(formName) {
@@ -235,6 +235,7 @@ export default {
 
 .el-input {
   width: 80%;
+
   // /deep/ <==> >>>
   /deep/ .el-input__inner {
     height: 50px;
@@ -249,6 +250,7 @@ export default {
   height: 50px;
 
   font-size: 20px;
+  background-color: #13c2c2;
 }
 
 /deep/ .el-form-item__error {
