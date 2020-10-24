@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 11:22:32
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 19:16:02
+ * @LastEditTime: 2020-10-24 11:00:25
  * @Description: 
 -->
 <template>
@@ -71,7 +71,6 @@ export default {
       // console.log("init");
       // 需要等wrapper挂载完
       this.scroll = new BScroll(this.$refs.newPublicRef, {
-        click: true,
         scrollX: true,
         observeDOM: true,
       });

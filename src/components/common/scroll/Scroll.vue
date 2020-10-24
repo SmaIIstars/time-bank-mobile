@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 10:18:00
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 17:55:15
+ * @LastEditTime: 2020-10-24 14:51:31
  * @Description: 
 -->
 <template>
@@ -15,7 +15,6 @@
 
 <script>
 import BScroll from "better-scroll";
-import NestedScroll from "@better-scroll/nested-scroll";
 
 export default {
   name: "Scroll",
@@ -24,8 +23,6 @@ export default {
 
   mounted() {
     this.createScroll();
-
-    this.getScrollPosition();
   },
 
   props: {
@@ -56,19 +53,9 @@ export default {
         pullUpLoad: this.pullUpLoad,
 
         observeDOM: true,
-        nestedScroll: true,
       });
 
       // console.log(this.scroll);
-    },
-
-    getScrollPosition() {
-      if (this.probeType === 2 || this.probeType === 3) {
-        this.scroll.on("scroll", (position) => {
-          // console.log(position);
-          this.$emit("getScrollPosition", position);
-        });
-      }
     },
   },
 };

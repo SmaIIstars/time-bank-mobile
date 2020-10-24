@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-21 11:11:09
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-21 11:36:38
+ * @LastEditTime: 2020-10-24 16:07:11
  * @Description: 
 -->
 <template>
@@ -12,6 +12,8 @@
 <script>
 import { mapMutations } from "vuex";
 import { CHANGE_ISSHOW_MAINTABBAR } from "store/modules/settingModule/constants";
+
+import { bb } from "../../servers/task";
 
 export default {
   name: "ErrorPage",

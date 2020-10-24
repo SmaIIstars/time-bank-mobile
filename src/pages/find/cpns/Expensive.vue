@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 11:22:32
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-23 20:02:18
+ * @LastEditTime: 2020-10-24 13:55:37
  * @Description: 
 -->
 <template>
@@ -19,12 +19,13 @@
               v-for="taskItem of $store.state.task.taskList"
               :key="taskItem.id"
               class="task-item"
+              @click.native="taskItemClick"
             >
               <div slot="title" class="title">
                 <img :src="taskItem.imgUrl[0]" alt="" />
               </div>
 
-              <div slot="content" class="task-content" @click="taskItemClick">
+              <div slot="content" class="task-content">
                 <div class="task-content-top">
                   <div class="task-title">
                     {{ taskItem.title }}
@@ -77,16 +78,17 @@ export default {
       // 需要等wrapper挂载完
       this.scroll = new BScroll(this.$refs.expensiveRef, {
         click: true,
+        stopPropagation: true,
+
         scrollY: true,
 
         observeDOM: true,
-        nestedScroll: true,
       });
       // console.log(this.scroll);
     },
 
     taskItemClick() {
-      console.log(1);
+      this.$router.push("/task");
     },
   },
 };
