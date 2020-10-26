@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 13:10:11
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-24 14:54:32
+ * @LastEditTime: 2020-10-26 10:49:56
 -->
 <template>
   <Scroll class="task-page-wrapper" v-if="taskInfo && taskInfo.imgUrl">
@@ -24,7 +24,7 @@
 
     <div class="task-description">
       <el-divider content-position="left">
-        <div class="divider-text">介绍</div>
+        <div class="divider-text">任务详情</div>
       </el-divider>
 
       <div class="description">
@@ -54,6 +54,7 @@ import { dateFormat } from "utils/formatUtil";
 
 import { CHANGE_TASK_LIST } from "store/modules/taskModule/constants";
 import { getTaskInfo } from "servers/task";
+import { getRankingInfo } from "servers/ranking";
 
 import Scroll from "../../components/common/scroll/Scroll";
 
@@ -68,6 +69,8 @@ export default {
     if (this.$store.state.task.taskList.length === 0) {
       this.getTaskInfo();
     }
+
+    this.getRankingInfo();
   },
   mounted() {
     this.taskInfo = this.$store.state.task.taskList[0];
@@ -88,6 +91,12 @@ export default {
       getTaskInfo().then((res) => {
         this.changeTaskList(res);
         this.taskInfo = this.$store.state.task.taskList[0];
+      });
+    },
+
+    getRankingInfo() {
+      getRankingInfo().then((res) => {
+        console.log(res);
       });
     },
   },
@@ -151,9 +160,10 @@ export default {
 
   .task-img {
     margin: 0 10px;
+    text-align: center;
 
     img {
-      width: 100%;
+      width: 80%;
     }
   }
 
