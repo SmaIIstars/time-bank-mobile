@@ -2,7 +2,7 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 10:18:00
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-24 14:51:31
+ * @LastEditTime: 2020-10-27 14:28:34
  * @Description: 
 -->
 <template>
@@ -55,7 +55,21 @@ export default {
         observeDOM: true,
       });
 
-      // console.log(this.scroll);
+      // 监听滚动
+      if (this.probeType === 2 || this.probeType === 3) {
+        this.scroll.on("scroll", (pos) => {
+          this.$emit("scroll", pos);
+        });
+      }
+    },
+
+    getScrollY() {
+      return this.scroll ? this.scroll.y : 0;
+    },
+
+    backTop(x, y, time = 500) {
+      console.log(1);
+      this.scroll && this.scroll.scrollTo(x, y, time);
     },
   },
 };

@@ -1,8 +1,8 @@
 import request from "./request";
 
-export function getRankingInfo() {
+export function getCommentInfo() {
   return request({
-    url: "/ranking",
+    url: "/comment",
     method: "get",
   });
 }

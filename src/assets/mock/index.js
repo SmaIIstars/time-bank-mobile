@@ -1,3 +1,3 @@
 import "./user";
 import "./task";
-import "./ranking";
+import "./comment";
