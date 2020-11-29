@@ -15,8 +15,8 @@ Mock.mock("/api/task", {
       city: "@city(true)",
       description: "@paragraph(1, 3)",
       time: {
-        published: '@datetime("yyyy-MM-dd HH:mm:ss")',
-        deadline: '@datetime("yyyy-MM-dd HH:mm:ss")',
+        published: Mock.Random.date("T"),
+        deadline: Mock.Random.date("T"),
       },
       type: 0,
       imgUrl:

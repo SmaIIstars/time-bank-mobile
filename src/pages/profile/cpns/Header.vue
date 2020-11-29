@@ -13,7 +13,7 @@
       <span class="integral">积分: {{ user.integral }}</span>
     </div>
     <div class="header-right">
-      <el-avatar :src="user.avatar" :size="60"></el-avatar>
+      <el-avatar :src="user.avatar" :size="60" />
     </div>
   </div>
   <div v-else>

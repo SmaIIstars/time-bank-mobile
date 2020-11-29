@@ -2,14 +2,14 @@
  * @Autor: Smallstars
  * @Date: 2020-10-22 11:22:32
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-11-29 21:28:17
+ * @LastEditTime: 2020-11-29 21:44:36
  * @Description: 
 -->
 <template>
   <div>
     <div class="page-wrapper">
       <el-card class="box-card">
-        <div slot="header" class="clearfix" @click="test">
+        <div slot="header" class="clearfix">
           <h4>最高悬赏</h4>
         </div>
 
@@ -19,21 +19,28 @@
               v-for="taskItem of $store.state.task.taskList"
               :key="taskItem.id"
               class="task-item"
+              @click.native="taskItemClick"
             >
               <div slot="title" class="title">
                 <img :src="taskItem.imgUrl[0]" alt="" />
               </div>
 
               <div slot="content" class="task-content">
-                <div class="task-title">
-                  {{ taskItem.title }}
+                <div class="task-content-top">
+                  <div class="task-title">
+                    {{ taskItem.title }}
+                  </div>
+
+                  <div>
+                    <div class="task-city">
+                      {{ taskItem.city }}
+                    </div>
+                  </div>
                 </div>
 
-                <div class="task-city">
-                  {{ taskItem.city }}
+                <div class="task-content-bottom">
+                  <div class="task-integral">积分: {{ taskItem.integral }}</div>
                 </div>
-
-                <div class="task-integral">积分: {{ taskItem.integral }}</div>
               </div>
             </InfoWrapper>
           </div>
@@ -71,15 +78,17 @@ export default {
       // 需要等wrapper挂载完
       this.scroll = new BScroll(this.$refs.expensiveRef, {
         click: true,
+        stopPropagation: true,
+
         scrollY: true,
+
         observeDOM: true,
-        nestedScroll: true,
       });
       // console.log(this.scroll);
     },
 
-    test() {
-      this.init();
+    taskItemClick() {
+      this.$router.push("/task");
     },
   },
 };
@@ -134,13 +143,17 @@ export default {
           }
         }
 
-        .task-city,
-        .task-integral {
+        .task-city {
           font-size: 12px;
           overflow: hidden;
           text-overflow: ellipsis;
 
           color: #bfbfbf;
+        }
+
+        .task-integral {
+          font-size: 16px;
+          font-weight: 600;
         }
       }
     }

@@ -4,7 +4,7 @@
  * @Author: Smallstars
  * @Date: 2020-10-18 13:09:40
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-11-29 21:37:38
+ * @LastEditTime: 2020-11-29 21:42:36
 -->
 <template>
   <div class="wrapper" ref="community">
@@ -170,6 +170,7 @@ export default {
 };
 </script>
 
+<<<<<<< HEAD
 <style scoped lang='less'>
 .wrapper {
   height: calc(100vh - 49px);
@@ -284,5 +285,5 @@ export default {
       width: 100%;
     }
   }
-}
+
 </style>
