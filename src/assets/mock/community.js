@@ -16,4 +16,8 @@ Mock.mock("/api/community", {
 
   announcer: "@name(true)",
   announcerId: "@id()",
+  "score|1-10.1": 9.0,
+  "attitude|1-100": 9,
+  "position|1-100": 9,
+  "duration|1-100": 9,
 });

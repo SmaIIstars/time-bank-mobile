@@ -19,7 +19,7 @@ import {
   FormItem,
   Input,
   Card,
-  radio,
+  Progress,
 } from "element-ui";
 
 Vue.use(Divider);
@@ -29,4 +29,4 @@ Vue.use(Form);
 Vue.use(FormItem);
 Vue.use(Input);
 Vue.use(Card);
-Vue.use(radio);
+Vue.use(Progress);
