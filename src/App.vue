@@ -4,12 +4,12 @@
  * @Author: Smallstars
  * @Date: 2020-10-17 22:53:23
  * @LastEditors: Smallstars
- * @LastEditTime: 2020-10-20 17:40:30
+ * @LastEditTime: 2020-11-28 13:56:38
 -->
 
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="Task Profile">
       <router-view />
     </keep-alive>
     <MainTabBar v-if="$store.state.setting.isShowMainTabBar" />

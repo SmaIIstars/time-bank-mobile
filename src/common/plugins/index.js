@@ -19,6 +19,7 @@ import {
   FormItem,
   Input,
   Card,
+  radio,
 } from "element-ui";
 
 Vue.use(Divider);
@@ -28,3 +29,4 @@ Vue.use(Form);
 Vue.use(FormItem);
 Vue.use(Input);
 Vue.use(Card);
+Vue.use(radio);

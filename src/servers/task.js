@@ -6,3 +6,10 @@ export function getTaskInfo() {
     method: "get",
   });
 }
+
+export function getMyTaskList() {
+  return request({
+    url: "/mytask",
+    method: "get",
+  });
+}
